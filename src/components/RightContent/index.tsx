@@ -1,7 +1,7 @@
 import { Space, Tooltip } from 'antd';
 import { QuestionCircleOutlined, ReloadOutlined } from '@ant-design/icons';
 import React from 'react';
-import { useModel, SelectLang, useIntl } from 'umi';
+import { useModel, useIntl } from 'umi';
 import Avatar from './AvatarDropdown';
 import HeaderSearch from '../HeaderSearch';
 import styles from './index.less';
@@ -73,7 +73,7 @@ const GlobalHeaderRight: React.FC<GlobalHeaderRightProps> = ({ switchTabsReloada
         <QuestionCircleOutlined />
       </span>
       <Avatar />
-      <SelectLang className={styles.action} />
+      {/* <SelectLang className={styles.action} /> */}
     </Space>
   );
 };
