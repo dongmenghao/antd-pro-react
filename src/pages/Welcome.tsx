@@ -17,6 +17,8 @@ const Welcome: React.FC = () => {
   return (
     <PageContainer>
       <Card>
+        <button className="btn">按钮</button>
+        <div className="p-2 text-primary font-bold text-lg bg-pink-500 mb-20">测试</div>
         <Alert
           message={intl.formatMessage({
             id: 'pages.welcome.alertMessage',

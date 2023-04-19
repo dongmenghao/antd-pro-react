@@ -51,6 +51,7 @@ export default defineConfig({
   },
   // Fast Refresh 热更新
   fastRefresh: {},
+  extraPostCSSPlugins: [require('tailwindcss'), require('autoprefixer')],
   openAPI: [
     {
       requestLibPath: "import { request } from 'umi'",
