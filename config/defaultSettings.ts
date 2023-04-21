@@ -30,6 +30,7 @@ const Settings: Settings = {
   pwa: false,
   logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
   iconfontUrl: '',
+  menu: { locale: false },
 
   switchTabs: {
     mode: Mode.Route,

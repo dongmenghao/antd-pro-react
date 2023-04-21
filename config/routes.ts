@@ -7,7 +7,7 @@
         path: '/user',
         routes: [
           {
-            name: 'login',
+            name: '登录',
             path: '/user/login',
             component: './User/Login',
           },
@@ -20,20 +20,20 @@
   },
   {
     path: '/welcome',
-    name: 'welcome',
+    name: '欢迎',
     icon: 'smile',
     component: './Welcome',
   },
   {
     path: '/admin',
-    name: 'admin',
+    name: '管理页',
     icon: 'crown',
     access: 'canAdmin',
     component: './Admin',
     routes: [
       {
         path: '/admin/sub-page',
-        name: 'sub-page',
+        name: '二级管理页',
         icon: 'smile',
         component: './Welcome',
       },
@@ -43,7 +43,7 @@
     ],
   },
   {
-    name: 'list.table-list',
+    name: '查询表格',
     icon: 'table',
     path: '/list',
     component: './TableList',
@@ -56,7 +56,7 @@
     component: './Dva',
   },
   {
-    name: 'switch-tabs-demos',
+    name: 'Switch Tabs Demos',
     icon: 'star',
     path: '/switch-tabs-demos',
     routes: [
@@ -65,12 +65,12 @@
         redirect: '/switch-tabs-demos/control',
       },
       {
-        name: 'control',
+        name: '控制台',
         path: '/switch-tabs-demos/control',
         component: './SwitchTabsDemos/Control',
       },
       {
-        name: 'parent',
+        name: '嵌套路由',
         path: '/switch-tabs-demos/parent',
         component: './SwitchTabsDemos/Parent',
         hideChildrenInMenu: true,
@@ -85,7 +85,7 @@
           },
           {
             path: '/switch-tabs-demos/parent/child2',
-            name: 'child2',
+            name: '嵌套路由 - 子节点 2',
             component: './SwitchTabsDemos/Parent/Child2',
           },
           {
@@ -95,19 +95,19 @@
         ],
       },
       {
-        name: 'query',
+        name: '查询页',
         path: '/switch-tabs-demos/query',
         component: './SwitchTabsDemos/Query',
       },
       {
-        name: 'result',
+        name: '结果页',
         path: '/switch-tabs-demos/result',
         follow: '/switch-tabs-demos/query',
         hideInMenu: true,
         component: './SwitchTabsDemos/Result',
       },
       {
-        name: 'dynamic',
+        name: '动态路由',
         path: '/switch-tabs-demos/dynamic/:anyStr',
         hideInMenu: true,
         component: './SwitchTabsDemos/Dynamic',

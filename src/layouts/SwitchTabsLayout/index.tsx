@@ -24,6 +24,7 @@ export interface MakeUpRoute extends Route, Pick<RouteConfig, 'follow' | 'redire
 function localeRoutes(
   routes: MakeUpRoute[],
   formatMessage: any,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   parent: MakeUpRoute | null = null,
 ): MenuDataItem[] {
   const result: MenuDataItem[] = [];
@@ -47,15 +48,15 @@ function localeRoutes(
     let newItem: MenuDataItem = {
       ...rest,
       routes: [],
-      locale: item.name,
+      // locale: item.name,
     };
 
-    const localeId = parent ? `${parent.locale}.${newItem.locale}` : `menu.${newItem.locale}`;
+    // const localeId = parent ? `${parent.locale}.${newItem.locale}` : `menu.${newItem.locale}`;
 
     newItem = {
       ...rest,
-      locale: localeId,
-      name: formatMessage({ id: localeId, defaultMessage: item.name }),
+      // locale: localeId,
+      // name: formatMessage({ id: localeId, defaultMessage: item.name }),
     };
 
     if (_isArray(itemRoutes) && itemRoutes.length) {
@@ -84,7 +85,9 @@ export interface RouteTabsLayoutProps
 export default function SwitchTabsLayout(props: RouteTabsLayoutProps): JSX.Element {
   const { mode, loading, routes, children, ...rest } = props;
   const intl = useIntl();
-  intl.onError = (error: string) => { console.log(error) }
+  intl.onError = (error: string) => {
+    console.log(error);
+  };
   const { formatMessage } = intl;
   const location = useLocation() as H.Location;
   const originalTabsRoutes = memoizedOneLocaleRoutes(routes!, formatMessage);
