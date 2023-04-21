@@ -55,7 +55,7 @@ function localeRoutes(
     newItem = {
       ...rest,
       locale: localeId,
-      name: formatMessage({ id: localeId }),
+      name: formatMessage({ id: localeId, defaultMessage: item.name }),
     };
 
     if (_isArray(itemRoutes) && itemRoutes.length) {
@@ -83,8 +83,9 @@ export interface RouteTabsLayoutProps
 
 export default function SwitchTabsLayout(props: RouteTabsLayoutProps): JSX.Element {
   const { mode, loading, routes, children, ...rest } = props;
-
-  const { formatMessage } = useIntl();
+  const intl = useIntl();
+  intl.onError = (error: string) => { console.log(error) }
+  const { formatMessage } = intl;
   const location = useLocation() as H.Location;
   const originalTabsRoutes = memoizedOneLocaleRoutes(routes!, formatMessage);
 

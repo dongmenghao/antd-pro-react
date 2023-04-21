@@ -49,6 +49,13 @@
     component: './TableList',
   },
   {
+    name: '状态管理dva',
+    icon: 'table',
+    path: '/dva',
+    disableLocale: true,
+    component: './Dva',
+  },
+  {
     name: 'switch-tabs-demos',
     icon: 'star',
     path: '/switch-tabs-demos',
